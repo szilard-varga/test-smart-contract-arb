@@ -6,12 +6,6 @@ import "./modules/LoanManager.sol";
 import "./database/HeartToken.sol";
 import "./modules/Wallet.sol";
 
-/**
-    @title Proxy
-    @dev All public calls that changes the state of blockchain should come through here
-    @author abhaydeshpande
- */
-
 contract Proxy is BaseContainer {
     function postRequest(uint256 _amount) external {
         bytes32 _debtNo = (sha256(abi.encodePacked(msg.sender, now)));
